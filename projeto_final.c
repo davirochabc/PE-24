@@ -10,7 +10,6 @@
 #define TAM_TITULO 50
 #define TAM_MUSICAS 100
 
-// Struct definitions
 struct Musica {
     int codigo;
     char titulo[TAM_TITULO];
@@ -36,14 +35,12 @@ struct Usuario {
     int playlistsFav[TAM_PLAYLIST];
 };
 
-// Global data arrays and counters
 struct Usuario usuarios[TAM_MAX_PLYLST];
 struct Musica musicas[TAM_MAX_PLYLST];
 int usuarioCount = 0;
 int musicaCount = 0;
 int playlistCount = 0;
 
-// Function prototypes
 void generate_sample_data();
 void display_main_menu();
 void handle_admin_menu();
@@ -76,7 +73,6 @@ void delete_song_from_playlist(struct Usuario *user);
 void delete_playlist(struct Usuario *user);
 void favorite_playlist(struct Usuario *user);
 
-// Main function
 int main() {
    generate_sample_data();
     while (1) {
@@ -109,7 +105,6 @@ int main() {
     return 0;
 }
 
-// Function implementations
 void generate_sample_data() {
    strcpy(usuarios[0].nome, "Admin User");
     strcpy(usuarios[0].login, "admin");
@@ -234,10 +229,10 @@ int login_admin() {
     printf("Digite a senha do administrador: ");
     scanf("%s", senha);
     if (strcmp(senha, "m@st3r2024") == 0) {
-        return 1; // Senha correta
+        return 1; 
     } else {
         printf("Senha incorreta, digite novamente!\n");
-        return 0; // Senha incorreta
+        return 0; 
     }
 }
 
@@ -372,7 +367,7 @@ void list_songs() {
 void consult_song() {
   char query[TAM_TITULO];
     printf("Digite o código, parte do título ou parte do nome do artista: ");
-    scanf(" %[^\n]%*c", query); // Lê a entrada com espaços
+    scanf(" %[^\n]%*c", query); 
 
     int found = 0;
     printf("\nResultados da Consulta:\n");
