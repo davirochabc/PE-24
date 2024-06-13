@@ -115,7 +115,6 @@ void generate_sample_data() {
 
     usuarioCount = 1;
 
-    // Sample songs
     strcpy(musicas[0].titulo, "Lugar ao Sol");
     strcpy(musicas[0].artista, "Charlie Brown Jr.");
     musicas[0].codigo = 1;
